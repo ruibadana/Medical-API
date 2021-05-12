@@ -8,5 +8,6 @@ router.route('/').get(controller.index)
                 .post(controller.add);
                 
 router.route('/:id').get(controller.view)
-    
+router.route('/maria').get(controller.maria) 
+
 module.exports = router;

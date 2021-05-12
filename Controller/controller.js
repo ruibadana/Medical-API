@@ -72,7 +72,7 @@ exports.view = (req, res) => {
 } */
 
 // Get Find Name Maria
-exports.findbyname = function (req, res) {
+exports.maria = function (req, res) {
     var name_maria = [];
     Plan.get(function (err, plan) {
 
@@ -82,11 +82,11 @@ exports.findbyname = function (req, res) {
                 message: err
             });
         for (var i = 0; i < Plan.length; i++) {
-            if (plan[i].name == "Maria") name_maria.push(plan[i].name);
+            if (plan[i].basic_info.name == "Maria") name_maria.push(plan[i].basic_info.name);
         }
         res.json({
             message: "Name: Maria",
-            name: name_maria
+            data:plan
         });
     });
 };
